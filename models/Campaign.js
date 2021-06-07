@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Campaign extends Model {}
 
-Comment.init(
+Campaign.init(
   {
     id: {
         type: DataTypes.INTEGER,
@@ -11,37 +11,38 @@ Comment.init(
         allowNull: false,
         autoIncrement: true
     },
-    comment: {
-        type: DataTypes.STRING,
+    unique_visitors: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-            len: [1]
-        }
     },
-    userID: {
+    total_visitors: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    fb_clicks: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    ig_clicks: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    projectID: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-        model: 'user',
-        key: 'id'
-        }
-    },
-    postID: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'post',
+            model: 'project',
             key: 'id'
-        }
-    }    
+          }
+    },   
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'campaign',
   } 
 );
 
-module.exports = Comment;
+module.exports = Campaign;
