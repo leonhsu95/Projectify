@@ -5,12 +5,13 @@ const ProjectItem = require('./ProjectItem');
 const Campaign = require('./Campaign');
 
 User.hasMany(Project, {
-  foreignKey: 'userID'
+  foreignKey: 'projectID',
+
 });
 
 Project.belongsTo(User, {
   foreignKey: 'userID',
-  onDelete: 'CASCADE'
+
 });
 
 // Projects belongToMany Items (through ProjectItem)
@@ -28,12 +29,12 @@ Item.belongsToMany(Project, {
 
 Project.hasMany(Campaign, {
   foreignKey: 'projectID',
-  onDelete: 'CASCADE'
+ 
 });
 
 Campaign.belongsTo(Project, {
   foreignKey: 'projectID',
-  onDelete: 'SET NULL'
+
 });
 
 module.exports = { User, Item, Project, ProjectItem, Campaign};

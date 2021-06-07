@@ -45,8 +45,11 @@ User.init(
       allowNull: false,
     },
     abn: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        isNumeric: true
+      },
     },
     address: {
       type: DataTypes.STRING,
@@ -59,11 +62,6 @@ User.init(
         len: [8],
       },
     },
-    active: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    }
   },
   {
     hooks: {
