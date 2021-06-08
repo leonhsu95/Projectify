@@ -17,11 +17,11 @@
             <a href="" class="signup">Sign up</a>
             <a href="" class="team">Account Manager</a>
             <a href="" class="product">Product</a>
-            {{#if logged_in}}
-            <a href="" class="login">Login</a>
-            {{else}}
-            <a href="/logout">Log Out</a>
-            {{/if}}
+          {{#if logged_in}}
+            <a href="" class="logout">Log Out</a>
+          {{else}}
+            <a href="/login">Log In</a>
+          {{/if}}
         </div>
         {{#if logged_in}}
         <div>
