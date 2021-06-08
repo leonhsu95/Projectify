@@ -5,7 +5,7 @@ const ProjectItem = require('./ProjectItem');
 const Campaign = require('./Campaign');
 
 User.hasMany(Project, {
-  foreignKey: 'projectID',
+  foreignKey: 'userID',
 
 });
 

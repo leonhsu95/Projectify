@@ -13,17 +13,17 @@ const seedDatabase = async () => {
   await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
   
-  // await seedProjects();
-  //   console.log('\n----- PROJECTS SEEDED -----\n');
+  await seedProjects();
+    console.log('\n----- PROJECTS SEEDED -----\n');
 
-  // await seedItems();
-  //   console.log('\n----- ITEMS SEEDED -----\n');
+  await seedItems();
+    console.log('\n----- ITEMS SEEDED -----\n');
 
-  // await seedProjectItems();
-  // console.log('\n----- PROJECT ITEMS SEEDED -----\n');
+  await seedProjectItems();
+  console.log('\n----- PROJECT ITEMS SEEDED -----\n');
 
-  // await seedCampaigns();
-  // console.log('\n----- PROJECT ITEMS SEEDED -----\n');
+  await seedCampaigns();
+  console.log('\n----- PROJECT ITEMS SEEDED -----\n');
 
 
   process.exit(0);

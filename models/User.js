@@ -35,7 +35,6 @@ User.init(
     phone: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
       validate: {
         isNumeric: true,
       },
