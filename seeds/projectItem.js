@@ -4,7 +4,15 @@ const projectItemData =
 [
   {
     "projectID": 1,
-    "itemID": [1,2,3]
+    "itemID": 1
+  },
+  {
+    "projectID": 1,
+    "itemID": 2
+  },
+  {
+    "projectID": 1,
+    "itemID": 3
   },
 ]
 

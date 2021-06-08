@@ -26,7 +26,8 @@ Item.init(
     },
     qty: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 1000
       }
   },
   {
