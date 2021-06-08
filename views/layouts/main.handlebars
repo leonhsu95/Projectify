@@ -1,44 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectify</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+<header>
+    <section class="navigation">
+        <div>
+            <h1><img src="./images/projectify_logo.png" alt="Projectify" class="projectifyIcon"/></h1>
+            <a href="" class="home">Home</a>
+            <a href="" class="signup">Sign up</a>
+            <a href="" class="team">Account Manager</a>
+            <a href="" class="product">Product</a>
+            {{#if logged_in}}
+            <a href="" class="login">Login</a>
+            {{else}}
+            <a href="/logout">Log Out</a>
+            {{/if}}
+        </div>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
+        <div>
+            <a href="" class="dashboard">Dashboard</a>
+            <a href="" class="projects">Projects</a>
+            <a href="" class="invoices">Invoices</a>
+        </div>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
+    </section>
+</header>
+
+<main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+</main>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+<footer>
+    <div id="footer-nav-container">
+        <div class="social-media">
+            <button class="facebook">Facebook</button>
+            <button class="instagram">Instagram</button>
+            <button class="linkedin">Linkedin</button>
+        </div>
+        <div>
+            <button class="product">Product</button>
+            <button class="privacy">Privacy</button>
+            <button class="terms">Terms</button>
+        </div>
+    </div>  
+</footer>
+
 </body>
-
+<script src="/js/script.js"></script>
 </html>

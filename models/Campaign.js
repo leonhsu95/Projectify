@@ -13,19 +13,19 @@ Campaign.init(
     },
     unique_visitors: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: 0
     },
     total_visitors: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: 0
     },
     fb_clicks: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: 0
     },
     ig_clicks: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: 0
     },
     projectID: {
         type: DataTypes.INTEGER,
