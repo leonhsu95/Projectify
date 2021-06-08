@@ -22,13 +22,13 @@ Item.init(
     },
     price: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
+      allowNull: false,
     },
     qty: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 1000
-      }
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1
+    }
   },
   {
     sequelize,
