@@ -17,6 +17,26 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/clientDetails', (req, res) => {
+  res.render('clientDetails');
+});
+
+router.get('/yourDetails', (req, res) => {
+  res.render('yourDetails');
+});
+
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
+router.get('/projects', (req, res) => {
+  res.render('projects');
+});
+
+router.get('/invoices', (req, res) => {
+  res.render('invoices');
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

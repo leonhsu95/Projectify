@@ -30,11 +30,12 @@
             {{/if}}
           </div>
           <div class="nav-group">
-            {{#if logged_in}}
-              <a href="" class="dashboard item">Dashboard</a>
-              <a href="" class="projects item">Projects</a>
-              <a href="" class="invoices item">Invoices</a>
-            {{/if}}
+            {{!-- {{#if logged_in}} --}}
+              <a href="/yourDetails" class="yourDetails item">Your Details</a>
+              <a href="/dashboard" class="dashboard item">Dashboard</a>
+              <a href="/projects" class="projects item">Projects</a>
+              <a href="/invoices" class="invoices item">Invoices</a>
+            {{!-- {{/if}} --}}
           </div>
         </nav>
       </section>

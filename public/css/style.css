@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;500;600&display=swap');header, .project:not(:last-child) {
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;500;600&display=swap");
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 200;
 }
 main.container {
@@ -34,14 +36,14 @@ main.container {
 /* GENERAL STYLE RULES */
 main h2 {
   color: rgb(62, 62, 63);
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 350;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 .logo-wrapper {
   width: 180px;
-  margin-bottom: .9rem;
+  margin-bottom: 0.9rem;
 }
 .section.wrapper {
   display: flex;
@@ -74,7 +76,7 @@ section.navigation nav {
   grid-template-columns: 2fr 1fr;
   height: 10vh;
   width: 95%;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 section.navigation nav .logo-container {
   width: 40px;
@@ -89,12 +91,12 @@ section.navigation nav .nav-group {
   align-items: center;
 }
 section.navigation nav .item {
-  margin: 0 .8rem;
-  font-family: 'Fira Sans', sans-serif;
+  margin: 0 0.8rem;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   color: rgba(62, 62, 63, 1);
 }
-.ui.secondary.menu  .item.active {
+.ui.secondary.menu .item.active {
   font-weight: 500;
 }
 /* END OF NAV  */
@@ -142,15 +144,15 @@ footer .logo {
 /* SIGNUP STYLES */
 section.signupPage .bodyWrapper h2 {
   color: rgb(62, 62, 63);
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 350;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 section.signupPage form {
-  width:  100%;
+  width: 100%;
 }
-section.signupPage form input:not(input[type= "button"]) {
+section.signupPage form input:not(input[type="button"]) {
   display: block;
   width: 100%;
   padding: 0.6rem 1rem;
@@ -158,16 +160,21 @@ section.signupPage form input:not(input[type= "button"]) {
   border: none;
 }
 section.signupPage .bodyWrapper form .d-flex input {
-  margin-right: 0.5rem ;
+  margin-right: 0.5rem;
 }
-section.signupPage .bodyWrapper form input.pass{
-  margin-top: .8rem;
+section.signupPage .bodyWrapper form input.pass {
+  margin-top: 0.8rem;
 }
-/* PRODUCTPAGE STYLING */
-section.productsPage div {
+/* PRODUCT PAGE STYLING */
+section.productsPage div,
+section.confirmationPage div {
   width: 100%;
 }
-section.productsPage, section.teamPage {
+section.productsPage,
+section.teamPage,
+section.confirmationPage,
+section.dashboardPage,
+section.projectPage {
   width: 80%;
   margin: 0 auto;
   transform: translate(0%, 2%);
@@ -178,8 +185,9 @@ section.productsPage h2 {
   text-align: center;
   margin-bottom: 0;
 }
-section.productsPage li {
-  padding: .8rem 0;
+section.productsPage li,
+section.confirmationPage li {
+  padding: 0.8rem 0;
   margin-left: 2.5rem;
 }
 section.productsPage .d-grid {
@@ -190,33 +198,120 @@ section.productsPage .d-grid {
 section.productsPage p {
   width: 80%;
 }
-section.productsPage div {
+section.productsPage div,
+section.confirmationPage div {
   background: #fff;
-  margin-top: .7rem;
-  margin-bottom: .5rem;
-}
-section.productsPage div:last-child {
+  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
+  margin-right: 3rem;
+}section.productsPage .d-flex
+section.productsPage div:last-child, section.productsPage .d-flex, section.productsPage div:last-child {
   background: transparent;
 }
-section.productsPage ul li i {
-  color: rgb(255,189, 102);
+section.productsPage ul li i,
+section.confirmationPage ul li i {
+  color: rgb(255, 189, 102);
 }
 /* TEAM PAGE STYLES */
 section.teamPage .d-flex .logo-wrapper {
-  width: 120px;
+  width: 100px;
+  margin-right: 0;
+  margin-left: auto;
 }
 section.teamPage img {
   width: 100%;
 }
 section.teamPage .team {
   background-color: #fff;
-  margin-left: 4rem;
+  margin-right: 4rem;
   width: 100%;
   padding: 1rem;
+}
+section.teamPage .team:last-child {
+  margin-right: 0;
 }
 section.teampage h2.team-header {
   margin: 3rem 0;
 }
 section.teamPage .team i {
-  color: rgb(255,189, 102);
+  color: rgb(255, 189, 102);
+}
+section.teamPage .d-grid,
+section.confirmationPage .d-grid {
+  display: flex;
+}
+section.teamPage .d-grid a,
+section.confirmationPage .d-grid a {
+  margin-right: 0;
+  margin-left: auto;
+}
+section.teamPage .team p {
+  width: 90%;
+  line-height: 1.5;
+}
+/* CONFIRMATION PAGE */
+section.confirmationPage {
+  transform: translate(0, 30%);
+}
+section.confirmationPage div {
+  margin-right: 1rem;
+  background: transparent;
+}
+/* LOGIN PAGE */
+section.loginPage .bodyImg {
+  width: 50vw;
+}
+section.loginPage img {
+  width: 100%;
+}
+section.loginPage .bodyWrapper {
+  margin: 8rem auto;
+}
+/* DASHBOARD STYLES */
+section.dashboardPage .imgBlock {
+  width: 30vw;
+  margin-right: 1rem;
+}
+section.dashboardPage h2 {
+  margin-top: 3rem;
+}
+/* PROJECTPAGE STYLES */
+section.projectPage .img-block {
+  width: 30vw;
+}
+section.projectPage .img-block img {
+  width: 100%;
+}
+section.projectPage span.circle {
+  width: 40px;
+  height: 40px;
+  background: rgb(180, 216, 82);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+section.projectPage .header {
+  display: flex;
+}
+section.projectPage .projectCard {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+}
+section.projectPage h5 {
+  font-weight: 400;
+  margin-top: 0.6rem;
+  color: rgb(62, 62, 63);
+}
+section.projectPage span i {
+  color: rgb(255, 189, 102);
+}
+section.projectPage .d-flex {
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+section.projectPage {
+  width: 80%;
+  margin: 0 auto;
+  transform: translate(0%, -2%);
 }
