@@ -1,5 +1,14 @@
-header, .project:not(:last-child) {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;500;600&display=swap');header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+}
+main.container {
+  max-height: 70vh;
+  height: 70vh;
+  overflow: hidden;
 }
 
 .no-button {
@@ -21,4 +30,193 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+/* GENERAL STYLE RULES */
+main h2 {
+  color: rgb(62, 62, 63);
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 350;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.logo-wrapper {
+  width: 180px;
+  margin-bottom: .9rem;
+}
+.section.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+main.container .bodyWrapper {
+  margin: 4rem auto;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.primaryBtn {
+  font-weight: 500;
+  background-color: rgb(255, 104, 97);
+  margin-top: 1.3rem;
+  color: #fff;
+  border: 1px solid rgb(255, 104, 97);
+  padding: 0.7rem 2.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* NAV STYLING */
+section.navigation nav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 10vh;
+  width: 95%;
+  margin:  0 auto;
+}
+section.navigation nav .logo-container {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+section.navigation nav .logo-container img {
+  width: 100%;
+}
+section.navigation nav .nav-group {
+  display: flex;
+  align-items: center;
+}
+section.navigation nav .item {
+  margin: 0 .8rem;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  color: rgba(62, 62, 63, 1);
+}
+.ui.secondary.menu  .item.active {
+  font-weight: 500;
+}
+/* END OF NAV  */
+/* HOME STYLING */
+main.container {
+  background: url(../images/backgroundimgwhite.png);
+}
+main.home section {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+main.home section img {
+  width: 100%;
+}
+main.home section .bodyText {
+  transform: translate(24%, 22%);
+}
+/* FOOTER STYLES */
+footer #footer-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+footer {
+  background: rgb(62, 62, 63);
+  color: #fff;
+  height: 20vh;
+}
+footer img {
+  width: 100%;
+}
+footer a {
+  color: #fff;
+  display: inline-block;
+  margin: 2rem 0;
+  margin-right: 2.6rem;
+}
+footer .logo {
+  margin-top: 4rem;
+}
+/* SIGNUP STYLES */
+section.signupPage .bodyWrapper h2 {
+  color: rgb(62, 62, 63);
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 350;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+section.signupPage form {
+  width:  100%;
+}
+section.signupPage form input:not(input[type= "button"]) {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin: 0.4rem 0;
+  border: none;
+}
+section.signupPage .bodyWrapper form .d-flex input {
+  margin-right: 0.5rem ;
+}
+section.signupPage .bodyWrapper form input.pass{
+  margin-top: .8rem;
+}
+/* PRODUCTPAGE STYLING */
+section.productsPage div {
+  width: 100%;
+}
+section.productsPage, section.teamPage {
+  width: 80%;
+  margin: 0 auto;
+  transform: translate(0%, 2%);
+}
+section.productsPage h2 {
+  border-bottom: 1px solid rgb(220, 216, 209);
+  padding-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+section.productsPage li {
+  padding: .8rem 0;
+  margin-left: 2.5rem;
+}
+section.productsPage .d-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-top: 1rem;
+}
+section.productsPage p {
+  width: 80%;
+}
+section.productsPage div {
+  background: #fff;
+  margin-top: .7rem;
+  margin-bottom: .5rem;
+}
+section.productsPage div:last-child {
+  background: transparent;
+}
+section.productsPage ul li i {
+  color: rgb(255,189, 102);
+}
+/* TEAM PAGE STYLES */
+section.teamPage .d-flex .logo-wrapper {
+  width: 120px;
+}
+section.teamPage img {
+  width: 100%;
+}
+section.teamPage .team {
+  background-color: #fff;
+  margin-left: 4rem;
+  width: 100%;
+  padding: 1rem;
+}
+section.teampage h2.team-header {
+  margin: 3rem 0;
+}
+section.teamPage .team i {
+  color: rgb(255,189, 102);
 }

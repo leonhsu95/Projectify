@@ -5,9 +5,31 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
 }
+
+ a {
+    color: rgba(62, 62, 63, 1);
+    text-decoration: none;
+ }
+
+ input {
+     display: block;
+ }
+
+ ul {
+     list-style-type:  none;
+     background: #fff;
+ }

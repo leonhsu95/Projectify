@@ -1,58 +1,78 @@
-<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projectify</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{! <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css" integrity="sha512-ox96Q1iqhM5TvdY4gVbz6FXoDwsR/Q8jq15kWReQNefC+uUGCv+pkMbLOtr176K3+bfrQQv6gTDAvhL1PUw2YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> }}
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-<header>
-    <section class="navigation">
-        <div>
-            <h1><img src="./images/projectify_logo.png" alt="Projectify" class="projectifyIcon"/></h1>
-            <a href="" class="home">Home</a>
-            <a href="" class="signup">Sign up</a>
-            <a href="" class="team">Account Manager</a>
-            <a href="" class="product">Product</a>
-          {{#if logged_in}}
-            <a href="" class="logout">Log Out</a>
-          {{else}}
-            <a href="/login">Log In</a>
-          {{/if}}
-        </div>
-        {{#if logged_in}}
-        <div>
-            <a href="" class="dashboard">Dashboard</a>
-            <a href="" class="projects">Projects</a>
-            <a href="" class="invoices">Invoices</a>
-        </div>
-        {{/if}}
-    </section>
-</header>
+  <body>
+    <header>
+      <section class="navigation ui secondary menu">
+        <nav>
+          <div class="nav-group">
+            <div class="logo-container"><img
+                src="./images/projectify_logo.png"
+                alt="Projectify"
+                class="projectifyIcon"
+              /></div>
+            <a href="/" class="home item active">Home</a>
+            <a href="/signup" class="signup item">Sign up</a>
+            <a href="/products" class="team item">Product</a>
+            <a href="/team" class="product item">Team</a>
+            {{#if logged_in}}
+              <a href="" class="logout item">Log Out</a>
+            {{else}}
+              <a href="/login" class="item">Log In</a>
+            {{/if}}
+          </div>
+          <div class="nav-group">
+            {{#if logged_in}}
+              <a href="" class="dashboard item">Dashboard</a>
+              <a href="" class="projects item">Projects</a>
+              <a href="" class="invoices item">Invoices</a>
+            {{/if}}
+          </div>
+        </nav>
+      </section>
+    </header>
 
-<main class="container">
+    <main class="container">
       <!-- Render the sub layout -->
-      {{{ body }}}
-</main>
+      {{{body}}}
+    </main>
 
-<footer>
-    <div id="footer-nav-container">
-        <div class="social-media">
-            <button class="facebook">Facebook</button>
-            <button class="instagram">Instagram</button>
-            <button class="linkedin">Linkedin</button>
-        </div>
+    <footer>
+      <div id="footer-nav-container">
         <div>
-            <button class="product">Product</button>
-            <button class="privacy">Privacy</button>
-            <button class="terms">Terms</button>
+          <a class="product">Login</a>
+          <a class="privacy">Privacy Policy</a>
+          <a class="terms">FAQ</a>
+          <br />
+          <p>© 2021 Projectify. All rights reserved</p>
         </div>
-    </div>  
-</footer>
+        <div class="logo">
+          <div class="logo-wrapper">
+            <img src="./images/projectify_logo_white.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
 
-</body>
-<script src="/js/script.js"></script>
+  </body>
+  <script src="/js/script.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  ></script>
 </html>
