@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
         })
         .then(dbProjectData => {
             if (!dbProjectData) {
-                res.status(404).json({ message: 'No project found with this id' });
+                res.status(404).json({ message: 'No item found with this id' });
                 return;
             }
             res.json(dbProjectData);
@@ -94,7 +94,7 @@ router.delete('/:id', (req, res) => {
         })
         .then(dbProjectData => {
             if (!dbProjectData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No item found with this id' });
                 return;
             }
             res.json(dbProjectData);
