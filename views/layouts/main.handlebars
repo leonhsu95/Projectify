@@ -23,8 +23,8 @@
             <a href="/signup" class="signup item">Sign up</a>
             <a href="/products" class="team item">Product</a>
             <a href="/team" class="product item">Team</a>
-            {{#if logged_in}}
-              <a href="" class="logout item">Log Out</a>
+            {{#if loggedIn}}
+              <a id="logout" href="" class="logout item">Log Out</a>
             {{else}}
               <a href="/login" class="item">Log In</a>
             {{/if}}
@@ -65,6 +65,7 @@
 
   </body>
   <script src="/js/script.js"></script>
+  <script src="/js/logout.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
     integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="

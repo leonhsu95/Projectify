@@ -1,7 +1,7 @@
-const logout = async () => {
+async function logout() {
   const response = await fetch('/api/users/logout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' }
   });
 
   if (response.ok) {
@@ -9,6 +9,6 @@ const logout = async () => {
   } else {
     alert(response.statusText);
   }
-};
+}
 
 document.querySelector('#logout').addEventListener('click', logout);
