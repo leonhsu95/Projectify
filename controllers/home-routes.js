@@ -26,7 +26,7 @@ router.get('/yourDetails', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/projects', (req, res) => {
