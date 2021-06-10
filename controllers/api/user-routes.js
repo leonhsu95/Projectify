@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Project, Item, ProjectItem, Campaign } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 router.get('/', (req, res) => {
     User.findAll({
             attributes: { exclude: ['[password'] }
@@ -21,7 +23,6 @@ router.get('/:id', (req, res) => {
                 {
                     model: Project,
                     attributes: [
-                        'id',
                         'project_name',
                         'start_date',
                         'end_date',
@@ -30,6 +31,15 @@ router.get('/:id', (req, res) => {
                     
                     include: {
                         model: Campaign,
+                        attributes: [
+                            "unique_visitors",
+                            "total_visitors",
+                            "fb_clicks",
+                            "fb_registered",
+                            "ig_registered",
+                            "ig_clicks",
+                            "createdAt"
+                        ],
                         order: ['campaign'],
                     }
                 },
@@ -62,17 +72,26 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', (req, res) => {
-
     User.create({
         username: req.body.username,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         email: req.body.email,
+        phone: req.body.phone,
+        abn: req.body.abn,
+        address: req.body.address,
         password: req.body.password
     })
-
     .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
+                req.session.firstname = dbUserData.firstname;
+                req.session.lastname = dbUserData.lastname;
+                req.session.email = dbUserData.email;
+                req.session.phone = dbUserData.phone;
+                req.session.abn = dbUserData.abn;
+                req.session.address = dbUserData.address;
                 req.session.loggedIn = true;
 
                 res.json(dbUserData);
@@ -87,11 +106,11 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
             where: {
-                username: req.body.username
+                email: req.body.email
             }
         }).then(dbUserData => {
             if (!dbUserData) {
-                res.status(400).json({ message: 'No user with that username!' });
+                res.status(400).json({ message: 'This user is not registered!' });
                 return;
             }
             const validPassword = dbUserData.checkPassword(req.body.password);
@@ -103,7 +122,7 @@ router.post('/login', (req, res) => {
             req.session.save(() => {
 
                 req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
+                req.session.email = dbUserData.email;
                 req.session.loggedIn = true;
 
                 res.json({ user: dbUserData, message: 'You are now logged in!' });

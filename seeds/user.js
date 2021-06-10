@@ -15,7 +15,7 @@ const userData =
   {
     "firstname": "Bob",
     "lastname": "Parkins",
-    "email": "bparkins@woolworths.com",
+    "email": "bparkins@woolworthsgroup.com",
     "phone": "0486545654",
     "company": "Woolworths Group",
     "abn": "88000014675",
