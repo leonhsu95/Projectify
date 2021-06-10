@@ -10,11 +10,11 @@ class Item extends Model {}
 Item.init(
   {
     // define columns
-     id: {
-     type: DataTypes.INTEGER,
-     primaryKey: true,
-     autoIncrement: true,
-     allowNull: false
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
     },
     item_type: {
       type: DataTypes.STRING,
@@ -24,11 +24,6 @@ Item.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    qty: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1
-    }
   },
   {
     sequelize,
@@ -40,3 +35,9 @@ Item.init(
 );
 
 module.exports = Item;
+
+// qty: {
+//   type: DataTypes.INTEGER,
+//   allowNull: false,
+//   defaultValue: 1
+// }
