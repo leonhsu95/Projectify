@@ -13,14 +13,14 @@ ProjectItem.init(
       autoIncrement: true,
       allowNull: false
     },
-    projectID: {
+    project_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'project',
         key: 'id'
       }
     },
-    itemID: {
+    item_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'item',

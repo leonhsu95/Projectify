@@ -7,7 +7,28 @@ const projectData =
     "start_date": 2021/06/01,
     "end_date": 2021/06/31,
     "active": true,
-    "userID": 1,
+    "user_id": 1,
+  },
+  {
+    "project_name": "Woolworths Delivery Services Eastlakes",
+    "start_date": 2021/06/01,
+    "end_date": 2021/06/31,
+    "active": true,
+    "user_id": 2,
+  },
+  {
+    "project_name": "Woolworths Delivery Services Balmain",
+    "start_date": 2021/06/01,
+    "end_date": 2021/06/31,
+    "active": true,
+    "user_id": 2,
+  },
+  {
+    "project_name": "Woolworths Delivery Services WPH",
+    "start_date": 2021/06/01,
+    "end_date": 2021/06/31,
+    "active": true,
+    "user_id": 2,
   },
 ]
 

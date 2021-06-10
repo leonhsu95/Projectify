@@ -23,11 +23,19 @@ Campaign.init(
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    ig_clicks: {
+    fb_registered: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    ig_registered: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    projectID: {
+    ig_clicks: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+  },
+    project_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

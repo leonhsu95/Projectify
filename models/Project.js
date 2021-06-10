@@ -33,7 +33,7 @@ Project.init(
       allowNull: false,
       defaultValue: true
     },
-    userID: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
