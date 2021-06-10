@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
         })
         .then(dbProjectData => {
             if (!dbProjectData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No project found with this id' });
                 return;
             }
             res.json(dbProjectData);
@@ -55,27 +55,27 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    User.create({
-        username: req.body.username,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        phone: req.body.phone,
-        abn: req.body.abn,
-        address: req.body.address,
-        password: req.body.password
+    Project.create({
+        // username: req.body.username,
+        // firstname: req.body.firstname,
+        // lastname: req.body.lastname,
+        // email: req.body.email,
+        // phone: req.body.phone,
+        // abn: req.body.abn,
+        // address: req.body.address,
+        // password: req.body.password
     })
     .then(dbProjectData => {
             req.session.save(() => {
-                req.session.user_id = dbProjectData.id;
-                req.session.username = dbProjectData.username;
-                req.session.firstname = dbProjectData.firstname;
-                req.session.lastname = dbProjectData.lastname;
-                req.session.email = dbProjectData.email;
-                req.session.phone = dbProjectData.phone;
-                req.session.abn = dbProjectData.abn;
-                req.session.address = dbProjectData.address;
-                req.session.loggedIn = true;
+                // req.session.user_id = dbProjectData.id;
+                // req.session.username = dbProjectData.username;
+                // req.session.firstname = dbProjectData.firstname;
+                // req.session.lastname = dbProjectData.lastname;
+                // req.session.email = dbProjectData.email;
+                // req.session.phone = dbProjectData.phone;
+                // req.session.abn = dbProjectData.abn;
+                // req.session.address = dbProjectData.address;
+                // req.session.loggedIn = true;
 
                 res.json(dbProjectData);
             });
@@ -87,7 +87,7 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    User.findOne({
+    Project.findOne({
             where: {
                 email: req.body.email
             }
@@ -115,38 +115,6 @@ router.post('/login', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-});
-
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
-});
-
-router.put('/:id', (req, res) => {
-
-    User.update(req.body, {
-            individualHooks: true,
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(dbProjectData => {
-            if (!dbProjectData) {
-                res.status(404).json({ message: 'No user found with this id' });
-                return;
-            }
-            res.json(dbProjectData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-
 });
 
 router.delete('/:id', (req, res) => {
