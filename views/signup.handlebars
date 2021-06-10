@@ -7,24 +7,24 @@
     </div>
     <div class="bodyWrapper">
       <h2>Register with us</h2>
-      <form action="">
+      <form action="/api/users" method="POST">
         <div class="d-flex">
-          <input type="text" placeholder="FirstName" />
-          <input type="text" placeholder="LastName" />
+          <input type="text" name="firstname" placeholder="FirstName" />
+          <input type="text" name="lastname" placeholder="LastName" />
         </div>
         <div class="d-flex">
-          <input type="text" placeholder="Email" />
-          <input type="text" placeholder="PhoneNumber" />
+          <input type="text" name="email" placeholder="Email" />
+          <input type="text" name="phone" placeholder="PhoneNumber" />
         </div>
         <div class="d-flex">
-          <input type="text" placeholder="Company" />
-          <input type="text" placeholder="ABN" />
+          <input type="text" name="company" placeholder="Company" />
+          <input type="text" name="abn" placeholder="ABN (No spaces)" />
         </div>
         <div>
-        <input type="text" placeholder="Address" />
-        <input type="text" placeholder="Password" class="pass" />
+        <input type="text" name="address" placeholder="Address" />
+        <input type="password" name="password" placeholder="Password" class="pass" />
         </div>
-        <input type="button" class="primaryBtn" placeholder="Register" value="register" />
+        <input type="submit" class="primaryBtn" placeholder="Register" value="register" />
       </form>
     </div>
   </div>

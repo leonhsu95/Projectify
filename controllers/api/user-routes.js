@@ -80,7 +80,8 @@ router.post('/', (req, res) => {
         phone: req.body.phone,
         abn: req.body.abn,
         address: req.body.address,
-        password: req.body.password
+        password: req.body.password,
+        company: req.body.company
     })
     .then(dbUserData => {
             req.session.save(() => {
@@ -94,7 +95,9 @@ router.post('/', (req, res) => {
                 req.session.address = dbUserData.address;
                 req.session.loggedIn = true;
 
-                res.json(dbUserData);
+                // res.json(dbUserData);
+                console.log("user created")
+                res.redirect("/products")
             });
         })
         .catch(err => {

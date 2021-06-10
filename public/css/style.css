@@ -69,6 +69,7 @@ main.container .bodyWrapper {
   border-radius: 6px;
   text-transform: uppercase;
   text-align: center;
+  display: inline-block;
 }
 /* NAV STYLING */
 section.navigation nav {
@@ -179,6 +180,9 @@ section.projectPage {
   margin: 0 auto;
   transform: translate(0%, 2%);
 }
+section.productsPage {
+  transform: translate(0%, 8%);
+}
 section.productsPage h2 {
   border-bottom: 1px solid rgb(220, 216, 209);
   padding-bottom: 1rem;
@@ -206,7 +210,10 @@ section.confirmationPage div {
   margin-right: 3rem;
 }section.productsPage .d-flex
 section.productsPage div:last-child, section.productsPage .d-flex, section.productsPage div:last-child {
-  background: transparent;
+  /* background: transparent; */
+}
+section.productsPage .d-grid {
+  background-color: transparent;
 }
 section.productsPage ul li i,
 section.confirmationPage ul li i {
