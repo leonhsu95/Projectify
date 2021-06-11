@@ -30,12 +30,12 @@
             {{/if}}
           </div>
           <div class="nav-group">
-            {{!-- {{#if logged_in}} --}}
+            {{#if loggedIn}}
               <a href="/yourDetails" class="yourDetails item">Your Details</a>
               <a href="/dashboard" class="dashboard item">Dashboard</a>
               <a href="/projects" class="projects item">Projects</a>
               <a href="/invoices" class="invoices item">Invoices</a>
-            {{!-- {{/if}} --}}
+            {{/if}}
           </div>
         </nav>
       </section>
@@ -49,9 +49,9 @@
     <footer>
       <div id="footer-nav-container">
         <div>
-          <a class="product">Login</a>
-          <a class="privacy">Privacy Policy</a>
-          <a class="terms">FAQ</a>
+          <a class="product" href="/login">Login</a>
+          <a class="privacy" href="/privacy">Privacy Policy</a>
+          <a class="terms" href="/faq">FAQ</a>
           <br />
           <p>© 2021 Projectify. All rights reserved</p>
         </div>

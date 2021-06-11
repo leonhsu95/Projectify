@@ -91,4 +91,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get("/faq", (req, res) => {
+  res.render("FAQ")
+})
+
+router.get("/privacy", (req, res) => {
+  res.render("privacy")
+})
+
 module.exports = router;

@@ -1,5 +1,10 @@
 <section class="dashboardPage">
-    <h2>Campaign Results</h2>
+    <div class="d-flex justify-space-between">
+        <h2>Campaign Results</h2>
+        <select name=""  id="">
+            <option value="">Select Project</option>
+        </select>
+    </div>
     <div class="d-flex">
         <div class="imgBlock">
             <div class="img-wrapper"><div id="container2"></div></div>
@@ -19,8 +24,78 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    {{!-- <script>
+     
+    </script> --}}
+    {{!--  --}}
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-      Highcharts.chart("container", {
+  
+    </script>
+    {{!--  --}}
+     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    {{!-- <script>
+    
+    </script> --}}
+
+    <script>
+        fetch(`http://localhost:3001/api/projects`)
+        .then(res => res.json())
+        .then(data => {
+            const igClicks = data.map(i => i.campaigns.map(item => item.ig_clicks))
+            const fbClicks = data.map(i => i.campaigns.map(item => item.fb_clicks))
+            const uniqueVisitors = data[0].campaigns.reduce((acc, curr) => {
+                return acc + curr.unique_visitors
+            }, 0)
+            const totalVisitors = data[0].campaigns.reduce((acc, curr) => {
+                return acc + curr.total_visitors
+            }, 0)
+            console.log(igClicks)
+            console.log(totalVisitors)
+            console.log(data)
+            Highcharts.chart("container3", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "Instagram clicks by month",
+        },
+        xAxis: {
+          categories: ["Jan", "Feb", "Mar"],
+          //   crosshair: true,
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "IG clicks",
+          },
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+          },
+          series: {
+            label: {
+              enabled: false,
+            },
+          },
+        },
+        series: [
+          {
+            name: data[0].project_name,
+            data: igClicks[0],
+          },
+        ],
+      });
+             Highcharts.chart("container", {
         chart: {
           type: "column",
         },
@@ -50,20 +125,12 @@
         },
         series: [
           {
-            name: "Project 1",
-            data: [2000, 3000, 3200],
+            name: data[0].project_name,
+            data: fbClicks[0],
           },
         ],
       });
-    </script>
-    {{!--  --}}
-    
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script>
-      Highcharts.chart("container2", {
+                Highcharts.chart("container2", {
         chart: {
           plotBackgroundColor: null,
           plotBorderWidth: null,
@@ -71,7 +138,7 @@
           type: "pie",
         },
         title: {
-          text: "Visitors this month",
+          text: "Total Visitors to the Landing Page",
         },
         tooltip: {
           pointFormat: "{series.name}: <b>{point.value}</b>",
@@ -97,27 +164,25 @@
             colorByPoint: true,
             data: [
               {
-                name: "Unique Visitors",
-                value: 1000,
-                y: (1000 / 1500) * 100,
+                name: "Unique",
+                value: uniqueVisitors,
+                y: (uniqueVisitors / 1500) * 100,
               },
               {
-                name: "Other Visitors",
-                value: 500,
-                y: (500 / 1500) * 100,
+                name: "Total",
+                value: totalVisitors,
+                y: (totalVisitors / 1500) * 100,
               },
             ],
           },
         ],
       });
+        })
     </script>
-    {{!--  --}}
-     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script>
-      Highcharts.chart("container3", {
+</section>
+
+{{!-- 
+  Highcharts.chart("container3", {
         chart: {
           type: "column",
         },
@@ -151,6 +216,4 @@
             data: [2000, 3000, 3200],
           },
         ],
-      });
-    </script>
-</section>
+      }); --}}

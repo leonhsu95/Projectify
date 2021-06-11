@@ -57,7 +57,10 @@ main.container .bodyWrapper {
 .d-flex {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
+}
+.d-flex.justify-space-between {
+  justify-content: space-between;
 }
 .primaryBtn {
   font-weight: 500;
@@ -105,13 +108,13 @@ section.navigation nav .item {
 main.container {
   background: url(../images/backgroundimgwhite.png);
 }
-main.home section {
+main.home section, main.faqPage section {
   display: flex;
   justify-content: space-between;
   width: 95%;
   margin: 0 auto;
 }
-main.home section img {
+main.home section img, main.faqPage section img {
   width: 100%;
 }
 main.home section .bodyText {
@@ -164,7 +167,7 @@ section.signupPage .bodyWrapper form .d-flex input {
   margin-right: 0.5rem;
 }
 section.signupPage .bodyWrapper form input.pass {
-  margin-top: 0.8rem;
+  /* margin-top: 0.8rem; */
 }
 /* PRODUCT PAGE STYLING */
 section.productsPage div,
@@ -217,7 +220,7 @@ section.productsPage .d-grid {
 }
 section.productsPage ul li i,
 section.confirmationPage ul li i {
-  color: rgb(255, 189, 102);
+  color: rgb(255, 104, 97);
 }
 /* TEAM PAGE STYLES */
 section.teamPage .d-flex .logo-wrapper {
@@ -241,7 +244,7 @@ section.teampage h2.team-header {
   margin: 3rem 0;
 }
 section.teamPage .team i {
-  color: rgb(255, 189, 102);
+  color: rgb(255, 104, 97);
 }
 section.teamPage .d-grid,
 section.confirmationPage .d-grid {
@@ -258,7 +261,7 @@ section.teamPage .team p {
 }
 /* CONFIRMATION PAGE */
 section.confirmationPage {
-  transform: translate(0, 30%);
+  transform: translate(0, 15%);
 }
 section.confirmationPage div {
   margin-right: 1rem;
@@ -281,6 +284,13 @@ section.dashboardPage .imgBlock {
 }
 section.dashboardPage h2 {
   margin-top: 3rem;
+}
+section.dashboardPage select {
+  padding: 1rem;
+    width: 30%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 47px;
 }
 /* PROJECTPAGE STYLES */
 section.projectPage .img-block {
@@ -311,7 +321,7 @@ section.projectPage h5 {
   color: rgb(62, 62, 63);
 }
 section.projectPage span i {
-  color: rgb(255, 189, 102);
+  color: rgb(255, 104, 97);
 }
 section.projectPage .d-flex {
   justify-content: space-between;
@@ -321,4 +331,33 @@ section.projectPage {
   width: 80%;
   margin: 0 auto;
   transform: translate(0%, -2%);
+}
+/* faq styles */
+.faqPage .wrapper {
+  width: 100%;
+}
+.faqPage .bodyText {
+  width: 100%;
+  transform: translate(10%, 10%);
+}
+.faqPage .bodyText li {
+  line-height: 2;
+}
+.faqPage ul {
+  background-color: transparent;
+}
+.faqPage ul li span i, .invoicePage ul li span i, i {
+  color: rgb(255, 104, 97);
+}
+/* PRIVACY PAGE STYLES */
+main.privacyPage section .bodyText {
+  transform: translate(10%, 40%) !important;
+  width: 50vw;
+}
+main.privacyPage section .bodyImg {
+  width: 40vw;
+}
+.invoicePage li {
+  display: flex;
+  justify-content: space-between;
 }

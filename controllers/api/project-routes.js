@@ -4,7 +4,27 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Project.findAll({
-            attributes: { exclude: ['id', 'user_id'] }
+            attributes: { exclude: ['id', 'user_id'] },
+            include: [
+                {
+                    model: Campaign,
+                    attributes: [
+                        "unique_visitors",
+                        "total_visitors",
+                        "fb_clicks",
+                        "fb_registered",
+                        "ig_registered",
+                        "ig_clicks",
+                        "createdAt"
+                    ],
+                    order: ['campaign'],
+                },
+                {
+                    model: User,
+                    attributes: {exclude: ['id', 'password']}
+                },
+
+            ]
         })
         .then(dbProjectData => res.json(dbProjectData))
         .catch(err => {
