@@ -3,17 +3,20 @@
   <div class="d-flex">
     <div>
       <ul>
-        <li><span><i class="fas fa-star"></i></span> Name: Megan skippen</li>
+        <li><span><i class="fas fa-star"></i></span> Name: {{data.firstname}} {{data.lastname}} </li>
         <li><span><i class="fas fa-star"></i></span>
-          Email: msskippen@gmail.com(*username)</li>
-        <li><span><i class="fas fa-star"></i></span> Mobile: 0406 611 044</li>
+          Email: {{data.email}}</li>
+        <li><span><i class="fas fa-star"></i></span> Phone: {{data.phone}} </li>
         <li><span><i class="fas fa-star"></i></span>
-          Company: Project Agents Pty Ltd</li>
-        <li><span><i class="fas fa-star"></i></span> ABN: 34 345 456</li>
+          Company: {{data.company}}</li>
+        <li><span><i class="fas fa-star"></i></span> ABN: {{data.abn}}</li>
       </ul>
     </div>
     <div>
       <ul>
+        {{#each data.projects}}
+          <li><span><i class="fas fa-star"></i></span> Project name: {{this.project_name}}</li>
+        {{/each}}
         <li><span><i class="fas fa-star"></i></span> Month start: January</li>
         <li><span><i class="fas fa-star"></i></span> Landing Page: Yes</li>
         <li><span><i class="fas fa-star"></i></span> Facebook: Yes</li>

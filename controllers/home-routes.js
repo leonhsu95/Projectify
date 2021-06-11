@@ -1,3 +1,5 @@
+const { User, Project, Campaign, Item, ProjectItem } = require('../models');
+
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -21,8 +23,50 @@ router.get('/clientDetails', (req, res) => {
   res.render('clientDetails');
 });
 
-router.get('/yourDetails', (req, res) => {
-  res.render('yourDetails');
+router.get('/yourDetails', (req, res) =>{
+    User.findOne({
+            attributes: { exclude: ['password'] },
+            where: {
+                id: req.session.user_id
+            },
+            include: [
+                {
+                    model: Project,
+                    attributes: [
+                        'project_name',
+                        'start_date',
+                        'end_date',
+                        'active'
+                    ],
+                    include: {
+                        model: Campaign,
+                        attributes: [
+                            "unique_visitors",
+                            "total_visitors",
+                            "fb_clicks",
+                            "fb_registered",
+                            "ig_registered",
+                            "ig_clicks",
+                            "createdAt"
+                        ],
+                        order: ['campaign'],
+                    }
+                }
+            ]
+        })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                // res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+            // res.json(dbUserData);
+            console.log(dbUserData, "<============")
+            res.render('yourDetails', {dbUserData: dbUserData.toJSON()});
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 router.get('/dashboard', (req, res) => {

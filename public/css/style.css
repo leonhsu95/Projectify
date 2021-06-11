@@ -183,7 +183,7 @@ section.projectPage {
 section.productsPage {
   transform: translate(0%, 8%);
 }
-section.productsPage h2 {
+section.productsPage .d-flex h2 {
   border-bottom: 1px solid rgb(220, 216, 209);
   padding-bottom: 1rem;
   text-align: center;

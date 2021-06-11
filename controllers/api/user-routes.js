@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
 
                 // res.json(dbUserData);
                 console.log("user created")
-                res.redirect("/products")
+                res.redirect("/yourDetails", {dbUserData})
             });
         })
         .catch(err => {
@@ -128,7 +128,8 @@ router.post('/login', (req, res) => {
                 req.session.email = dbUserData.email;
                 req.session.loggedIn = true;
 
-                res.json({ user: dbUserData, message: 'You are now logged in!' });
+                // res.json({ user: dbUserData, message: 'You are now logged in!' });
+                res.redirect("/yourDetails")
             });
         })
         .catch(err => {
