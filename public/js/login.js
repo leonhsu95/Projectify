@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      location.replace('/yourDetails');
     } else {
       alert(response.statusText);
     }
@@ -23,5 +23,3 @@ async function loginFormHandler(event) {
 }
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
-
-

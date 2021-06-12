@@ -7,25 +7,27 @@
     </div>
     <div class="bodyWrapper">
       <h2>Register with us</h2>
-      <form action="/api/users" method="POST">
+      <form id="signup-form">
         <div class="d-flex">
-          <input type="text" name="firstname" placeholder="FirstName" />
-          <input type="text" name="lastname" placeholder="LastName" />
+          <input id="firstname-signup" type="text" name="firstname" placeholder="First Name"/>
+          <input id="lastname-signup" type="text" name="lastname" placeholder="Last Name"/>
         </div>
         <div class="d-flex">
-          <input type="text" name="email" placeholder="Email" />
-          <input type="text" name="phone" placeholder="PhoneNumber" />
+          <input id="email-signup" type="text" name="email" placeholder="Email"/>
+          <input id="phone-signup" type="text" name="phone" placeholder="Phone Number"/>
         </div>
         <div class="d-flex">
-          <input type="text" name="company" placeholder="Company" />
-          <input type="text" name="abn" placeholder="ABN (No spaces)" />
+          <input id="company-signup" type="text" name="company" placeholder="Company"/>
+          <input id="abn-signup" type="text" name="abn" placeholder="ABN (No spaces)"/>
         </div>
         <div>
-        <input type="text" name="address" placeholder="Address" />
-        <input type="password" name="password" placeholder="Password" class="pass" />
+        <input id="address-signup" type="text" name="address" placeholder="Address"/>
+        <input id="password-signup" type="password" name="password" placeholder="Password" class="pass"/>
         </div>
-        <input type="submit" class="primaryBtn" placeholder="Register" value="register" />
+        <input type="submit" class="primaryBtn" placeholder="Register" value="register"/>
       </form>
     </div>
   </div>
 </section>
+
+<script src="/js/signup.js"></script>

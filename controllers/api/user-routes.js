@@ -73,31 +73,33 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     User.create({
-        username: req.body.username,
+        
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email: req.body.email,
         phone: req.body.phone,
+        company: req.body.company,
         abn: req.body.abn,
         address: req.body.address,
         password: req.body.password,
-        company: req.body.company
+        
     })
     .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
                 req.session.firstname = dbUserData.firstname;
                 req.session.lastname = dbUserData.lastname;
                 req.session.email = dbUserData.email;
                 req.session.phone = dbUserData.phone;
+                req.session.company = dbUserData.company;
                 req.session.abn = dbUserData.abn;
                 req.session.address = dbUserData.address;
                 req.session.loggedIn = true;
 
-                // res.json(dbUserData);
+                
                 console.log("user created")
-                res.redirect("/yourDetails", {dbUserData})
+                res.json(dbUserData);
+                // res.redirect("/yourDetails", {dbUserData})
             });
         })
         .catch(err => {
@@ -116,20 +118,19 @@ router.post('/login', (req, res) => {
                 res.status(400).json({ message: 'This user is not registered!' });
                 return;
             }
-            // const validPassword = dbUserData.checkPassword(req.body.password);
+            const validPassword = dbUserData.checkPassword(req.body.password);
 
-            // if (!validPassword) {
-            //     res.status(400).json({ message: 'Incorrect password!' });
-            //     return;
-            // }
+            if (!validPassword) {
+                res.status(400).json({ message: 'Incorrect password!' });
+                return;
+            }
             req.session.save(() => {
 
                 req.session.user_id = dbUserData.id;
                 req.session.email = dbUserData.email;
                 req.session.loggedIn = true;
 
-                // res.json({ user: dbUserData, message: 'You are now logged in!' });
-                res.redirect("/yourDetails")
+                res.json({ user: dbUserData, message: 'You are now logged in!' });
             });
         })
         .catch(err => {
