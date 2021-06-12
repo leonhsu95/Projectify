@@ -330,7 +330,7 @@ section.projectPage .d-flex {
 section.projectPage {
   width: 80%;
   margin: 0 auto;
-  transform: translate(0%, -2%);
+  transform: translate(0%, 9%);
 }
 /* faq styles */
 .faqPage .wrapper {

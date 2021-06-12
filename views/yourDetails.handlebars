@@ -1,29 +1,29 @@
 <section class="confirmationPage">
   <div class="d-flex justify-space-between">
   <h2>Your Details</h2>
-    <h2>Your Projects and Campaigns</h2>
+    <h2>Your Projects</h2>
   </div>
   <div class="d-flex">
     <div>
       <ul>
-        <li><span><i class="fas fa-bullseye"></i></span> Name: {{dbUserData.firstname}} {{dbUserData.lastname}} </li>
+        <li><span><i class="fas fa-bullseye"></i></span>  Name: {{dbUserData.firstname}} {{dbUserData.lastname}} </li>
         <li><span><i class="fas fa-bullseye"></i></span>
           Email: {{dbUserData.email}}</li>
-        <li><span><i class="fas fa-bullseye"></i></span> Phone: {{dbUserData.phone}} </li>
+        <li><span><i class="fas fa-bullseye"></i></span>  Phone: {{dbUserData.phone}} </li>
         <li><span><i class="fas fa-bullseye"></i></span>
           Company: {{dbUserData.company}}</li>
-        <li><span><i class="fas fa-bullseye"></i></span> ABN: {{dbUserData.abn}} {{test.name}} </li>
+        <li><span><i class="fas fa-bullseye"></i></span>  ABN: {{dbUserData.abn}} {{test.name}} </li>
       </ul>
     </div>
     <div>
       <ul>
         {{#each dbUserData.projects}}
-          <li><span><i class="fas fa-bullseye"></i></span> Project name: {{this.project_name}}</li>
+          <li><span><i class="fas fa-bullseye"></i></span>  Project name: {{this.project_name}}</li>
         {{/each}}
         {{!-- <li><span><i class="fas fa-bullseye"></i></span> Month start: January</li> --}}
-        <li><span><i class="fas fa-bullseye"></i></span> Landing Page: Yes</li>
+        {{!-- <li><span><i class="fas fa-bullseye"></i></span> Landing Page: Yes</li>
         <li><span><i class="fas fa-bullseye"></i></span> Facebook: Yes</li>
-        <li><span><i class="fas fa-bullseye"></i></span> Instagram: Yes</li>
+        <li><span><i class="fas fa-bullseye"></i></span> Instagram: Yes</li> --}}
         {{!-- <li><span><i class="fas fa-bullseye"></i></span> TOTAL: $7,000/ January</li> --}}
       </ul>
     </div>
