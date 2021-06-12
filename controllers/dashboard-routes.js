@@ -2,82 +2,63 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Project, Item, ProjectItem, Campaign } = require('../models');
 const withAuth = require('../utils/auth');
+
 router.get('/', withAuth, (req, res) => {
-    Post.findAll({
+    res.render('dashboard', { loggedIn: req.session.loggedIn });
+  });
+
+  router.get('/profile', withAuth, (req, res) =>{
+    User.findOne({
+            attributes: { exclude: ['password'] },
             where: {
-                user_id: req.session.user_id
+                id: req.session.user_id
             },
-            attributes: [
-                'id',
-                'title',
-                'content',
-                'created_at'
-            ],
-            include: [{
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
+            include: [
                 {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
-        })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-            where: {
-                id: req.params.id
-            },
-            attributes: ['id',
-                'title',
-                'content',
-                'created_at'
-            ],
-            include: [{
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    model: Project,
+                    attributes: [
+                        'project_name',
+                        'start_date',
+                        'end_date',
+                        'active'
+                    ],
                     include: {
-                        model: User,
-                        attributes: ['username']
+                        model: Campaign,
+                        attributes: [
+                            "unique_visitors",
+                            "total_visitors",
+                            "fb_clicks",
+                            "fb_registered",
+                            "ig_registered",
+                            "ig_clicks",
+                            "createdAt"
+                        ],
+                        order: ['campaign'],
                     }
                 }
             ]
         })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
-
-            const post = dbPostData.get({ plain: true });
-            res.render('edit-post', { post, loggedIn: true });
+            // res.json(dbUserData);
+            console.log(dbUserData, "<============")
+            res.render('profile', {dbUserData: dbUserData.toJSON()});
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
-        });
-})
-router.get('/new', (req, res) => {
-    res.render('new-post');
+        })
 });
 
+router.get('/projects', withAuth, (req, res) => {
+  res.render('projects');
+});
 
+router.get('/invoices', withAuth, (req, res) => {
+  res.render('invoices');
+});
 
 module.exports = router;

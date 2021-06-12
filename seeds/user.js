@@ -22,16 +22,6 @@ const userData =
     "address": "1 Woolworths Way, Bella Vista NSW 2153",
     "password": "WowPW1"
   },
-  // {
-  //   "firstname": "Test",
-  //   "lastname": "User",
-  //   "email": "admin@email.com",
-  //   "phone": "0437895456",
-  //   "company": "Tests R Us",
-  //   "abn": "43281231358",
-  //   "address": "2 Path Avenue, West Pennant Hills NSW 2125",
-  //   "password": "password"
-  // },
 ]
 
 const seedUsers = () => User.bulkCreate(userData, {

@@ -14,11 +14,11 @@
       <section class="navigation ui secondary menu">
         <nav>
           <div class="nav-group">
-            <div class="logo-container"><img
-                src="./images/projectify_logo.png"
-                alt="Projectify"
+            <div class="logo-container"><h1><img
+                src="../images/projectify_logo.png"
+                alt="Projectify Logo"
                 class="projectifyIcon"
-              /></div>
+              /></h1></div>
             <a href="/" class="home item active">Home</a>
             {{#if loggedOut}}
             <a href="/signup" class="signup item">Sign up</a>
@@ -33,10 +33,10 @@
           </div>
           <div class="nav-group">
             {{#if loggedIn}}
-              <a href="/yourDetails" class="yourDetails item">Your Details</a>
+              <a href="/dashboard/profile" class="yourDetails item">My Profile</a>
               <a href="/dashboard" class="dashboard item">Dashboard</a>
-              <a href="/projects" class="projects item">Projects</a>
-              <a href="/invoices" class="invoices item">Invoices</a>
+              <a href="/dashboard/projects" class="projects item">Projects</a>
+              <a href="/dashboard/invoices" class="invoices item">Invoices</a>
             {{/if}}
           </div>
         </nav>
@@ -59,11 +59,11 @@
           <a class="privacy" href="/privacy">Privacy Policy</a>
           <a class="terms" href="/faq">FAQ</a>
           <br />
-          <p>© 2021 Projectify. All rights reserved</p>
+          <p>&copy; 2021 Projectify. All rights reserved</p>
         </div>
         <div class="logo">
           <div class="logo-wrapper">
-            <img src="./images/projectify_logo_white.png" alt="" />
+            <img src="../images/projectify_logo_white.png" alt="Projectify Logo" />
           </div>
         </div>
       </div>
