@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,13 +21,16 @@
                 class="projectifyIcon"
               /></h1></div>
             <a href="/" class="home item active">Home</a>
-            {{#if loggedOut}}
+            {{#if loggedIn}}
+            
+            {{else}}
             <a href="/signup" class="signup item">Sign up</a>
             {{/if}}
+
             <a href="/products" class="team item">Product</a>
             <a href="/team" class="product item">Team</a>
             {{#if loggedIn}}
-              <a id="logout" href="" class="logout item">Log Out</a>
+              <a class="logout" href="" class="logout item">Log Out</a>
             {{else}}
               <a href="/login" class="item">Log In</a>
             {{/if}}
@@ -36,7 +40,7 @@
               <a href="/dashboard/profile" class="yourDetails item">My Profile</a>
               <a href="/dashboard" class="dashboard item">Dashboard</a>
               <a href="/dashboard/projects" class="projects item">Projects</a>
-              <a href="/dashboard/invoices" class="invoices item">Invoices</a>
+              {{!-- <a href="/dashboard/invoices" class="invoices item">Invoices</a> --}}
             {{/if}}
           </div>
         </nav>
@@ -52,7 +56,7 @@
       <div id="footer-nav-container">
         <div>
           {{#if loggedIn}}
-              <a id="logout" href="" class="product">Log Out</a>
+              <a class="logout" href="" class="product">Log Out</a>
             {{else}}
               <a href="/login" class="product">Log In</a>
             {{/if}}

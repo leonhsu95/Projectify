@@ -18,7 +18,11 @@
     <div>
       <ul>
         {{#each dbUserData.projects}}
-          <li><span><i class="fas fa-bullseye"></i></span>  Project name: {{this.project_name}}</li>
+          <li>
+            <a href="/dashboard/projects">
+              <span><i class="fas fa-bullseye"></i></span>  Project name: {{this.project_name}}
+            </a> 
+          </li>
         {{/each}}
         {{!-- <li><span><i class="fas fa-bullseye"></i></span> Month start: January</li> --}}
         {{!-- <li><span><i class="fas fa-bullseye"></i></span> Landing Page: Yes</li>
@@ -34,3 +38,4 @@
   </div>
 
 </section>
+

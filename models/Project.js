@@ -20,6 +20,10 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    project_description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     start_date: {
       type: DataTypes.DATEONLY,
       allowNull: false

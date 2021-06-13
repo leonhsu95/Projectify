@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Project.findOne({
-            attributes: { exclude: ['id', 'user_id'] },
+            attributes: { exclude: ['id', 'user_id'], },
             where: {
                 id: req.params.id
             },

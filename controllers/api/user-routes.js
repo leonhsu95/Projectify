@@ -13,17 +13,18 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/profile', (req, res) => {
     User.findOne({
             attributes: { exclude: ['password'] },
             where: {
-                id: req.params.id
+                id: req.session.user_id
             },
             include: [
                 {
                     model: Project,
                     attributes: [
                         'project_name',
+                        'project_description',
                         'start_date',
                         'end_date',
                         'active'

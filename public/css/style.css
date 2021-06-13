@@ -290,7 +290,7 @@ section.dashboardPage select {
     width: 30%;
     border: 1px solid grey;
     border-radius: 5px;
-    height: 47px;
+    height: 51px;
 }
 /* PROJECTPAGE STYLES */
 section.projectPage .img-block {
@@ -350,12 +350,12 @@ section.projectPage {
   color: rgb(255, 104, 97);
 }
 /* PRIVACY PAGE STYLES */
-main.privacyPage section .bodyText {
+section.privacyPage .bodyText {
   transform: translate(10%, 40%) !important;
-  width: 50vw;
+  width: 40%;
 }
-main.privacyPage section .bodyImg {
-  width: 40vw;
+section.privacyPage .bodyImg {
+  width: 50%;
 }
 .invoicePage li {
   display: flex;

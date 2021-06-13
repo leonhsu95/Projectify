@@ -30,7 +30,7 @@ async function signupFormHandler(event) {
             console.log('success');
   
   
-            document.location.replace('/yourDetails');
+            document.location.replace('/dashboard/profile');
   
         } else {
             alert(response.statusText);
