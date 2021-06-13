@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projectify</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{! <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css" integrity="sha512-ox96Q1iqhM5TvdY4gVbz6FXoDwsR/Q8jq15kWReQNefC+uUGCv+pkMbLOtr176K3+bfrQQv6gTDAvhL1PUw2YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> }}
+     {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.min.css" integrity="sha512-ox96Q1iqhM5TvdY4gVbz6FXoDwsR/Q8jq15kWReQNefC+uUGCv+pkMbLOtr176K3+bfrQQv6gTDAvhL1PUw2YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  --}}
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
@@ -20,7 +20,7 @@
                 alt="Projectify Logo"
                 class="projectifyIcon"
               /></h1></div>
-            <a href="/" class="home item active">Home</a>
+            <a href="/" class="home item">Home</a>
             {{#if loggedIn}}
             
             {{else}}
@@ -30,7 +30,7 @@
             <a href="/products" class="team item">Product</a>
             <a href="/team" class="product item">Team</a>
             {{#if loggedIn}}
-              <a class="logout" href="" class="logout item">Log Out</a>
+              <a href="" class="logout item">Log Out</a>
             {{else}}
               <a href="/login" class="item">Log In</a>
             {{/if}}
@@ -75,15 +75,18 @@
 
   </body>
   <script src="/js/logout.js"></script>
+  
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  ></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
     integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"
-  ></script>
+  <script src="/js/nav.js"></script>
+  
 </html>

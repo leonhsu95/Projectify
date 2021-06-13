@@ -76,8 +76,8 @@ main.container .bodyWrapper {
 }
 /* NAV STYLING */
 section.navigation nav {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   height: 10vh;
   width: 95%;
   margin: 0 auto;
@@ -101,6 +101,9 @@ section.navigation nav .item {
   color: rgba(62, 62, 63, 1);
 }
 .ui.secondary.menu .item.active {
+  font-weight: 500;
+}
+.active {
   font-weight: 500;
 }
 /* END OF NAV  */

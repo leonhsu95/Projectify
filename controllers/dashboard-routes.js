@@ -14,7 +14,7 @@ router.get('/', withAuth, (req, res) => { //CONSIDER FINDING BY USER
                 model: Project,
                 attributes: [
                     "project_name",
-                    "description",
+                    "project_description",
                     "start_date",
                     "active"
                 ],
