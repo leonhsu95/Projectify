@@ -43,18 +43,6 @@ router.get('/:id', (req, res) => {
                         order: ['campaign'],
                     }
                 },
-                // {
-                //     model: Comment,
-                //     attributes: ['id', 'comment_text', 'created_at'],
-                //     include: {
-                //         model: Post,
-                //         attributes: ['title']
-                //     }
-                // },
-                // {
-                //     model: Post,
-                //     attributes: ['title'],
-                // }
             ]
         })
         .then(dbUserData => {
