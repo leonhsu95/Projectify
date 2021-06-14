@@ -9,7 +9,12 @@
         generating more leads or driving more sales get a Free Strategy Session
         now and make this your year.
       </p>
-      <a href="/signup" class="primaryBtn" id="StartButton">Get Started</a>
+       {{#if loggedIn}}
+            
+      {{else}}
+        <a href="/signup" class="primaryBtn" id="StartButton">Get Started</a>
+      {{/if}}
+      
     </div>
     <div class="bodyImg">
       <div class="wrapper">
