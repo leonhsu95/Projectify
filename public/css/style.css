@@ -567,6 +567,7 @@ section.privacyPage .bodyImg {
   main.container{
     height: 100%;
     max-height: max-content;
+    min-height: 60vh;
     /* overflow: auto; */
   }
   
@@ -710,7 +711,11 @@ section.privacyPage .bodyImg {
   /* PROJECTS PAGE */
   section.projectPage{
     transform: none;
-    padding: 5% 0;
+    padding: 5% 0 10% 0;
+  }
+
+  .projectCard p{
+    line-height: 2;
   }
 
   section.projectPage .img-block img {
