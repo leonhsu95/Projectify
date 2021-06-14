@@ -1,6 +1,6 @@
 # PROJECTIFY
 
-Link to the deployed application can be tested here on Heroku: [Projectify]() and the project repository can be viewed here: [Projectify](https://github.com/mskippen/Projectify).
+Link to the deployed application can be tested here on Heroku: [Projectify Marketing App](https://projectify-marketing-app.herokuapp.com/) and the project repository can be viewed here: [Projectify](https://github.com/mskippen/Projectify).
 
 Feel free to test by logging in with these credentials:
 - Username: bparkins@woolworthsgroup.com
