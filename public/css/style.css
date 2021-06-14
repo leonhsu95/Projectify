@@ -704,7 +704,10 @@ section.privacyPage .bodyImg {
   }
 
   #my-projects-responsive{
+    margin-top: 40px;
     display: inline-block;
+    position: relative;
+    bottom: -10px;
   }
 
 
