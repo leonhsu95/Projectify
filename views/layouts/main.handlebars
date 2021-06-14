@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <header>
-      <section class="navigation ui secondary menu">
+    <header id="nav-desktop">
+      <section  class="navigation ui secondary menu">
         <nav>
           <div class="nav-group">
             <div class="logo-container"><h1><img
@@ -46,6 +46,37 @@
         </nav>
       </section>
     </header>
+    <header id="header-responsive">
+        <nav id="nav-responsive">
+            <div id="logo">
+                <h2><a href="/" class="home item"><img id="logo-design" src="../images/projectify_logo_colour.png" alt="Projectify Logo"></a></h2>
+            </div>
+            <ul  class="nav-links">
+                <li><a href="/" class="home item">Home</a></li>
+                {{#if loggedIn}}
+                {{else}}
+                  <li><a href="/signup" class="signup item">Sign up</a></li> 
+                {{/if}}
+                <li><a href="/products" class="team item">Product</a></li>
+                <li><a href="/team" class="product item">Team</a></li>
+                <li>{{#if loggedIn}}
+              <a href="" class="logout item">Log Out</a>
+            {{else}}
+              <a href="/login" class="item">Log In</a>
+            {{/if}}</li>
+            {{#if loggedIn}}
+            <li><a href="/dashboard/profile" class="yourDetails item">My Profile</a></li>
+            <li><a href="/dashboard" class="dashboard item">Dashboard</a></li>
+            <li><a href="/dashboard/projects" class="projects item">Projects</a></li>
+            {{/if}}
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
 
     <main class="container">
       <!-- Render the sub layout -->
@@ -75,6 +106,7 @@
 
   </body>
   <script src="/js/logout.js"></script>
+  <script src="/js/nav-responsive.js"></script>
   
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"

@@ -111,16 +111,16 @@ section.navigation nav .item {
 main.container {
   background: url(../images/backgroundimgwhite.png);
 }
-main.home section, main.faqPage section {
+.home section, .faqPage section {
   display: flex;
   justify-content: space-between;
   width: 95%;
   margin: 0 auto;
 }
-main.home section img, main.faqPage section img {
+.home section img, .faqPage section img {
   width: 100%;
 }
-main.home section .bodyText {
+.home section .bodyText {
   transform: translate(24%, 22%);
 }
 /* FOOTER STYLES */
@@ -371,4 +371,409 @@ section.privacyPage .bodyImg {
 .invoicePage li {
   display: flex;
   justify-content: space-between;
+}
+
+/* ADDITIONAL STYLING */
+#header-responsive{
+  display: none;
+}
+
+#my-projects-responsive{
+  display: none;
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+
+@media only screen and (max-width: 960px) {
+  /* main.handlebars */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/*-NAVIGATION BAR-*/
+
+#header-responsive {
+  z-index: 2;
+}
+
+
+#logo h2{
+  font-size: 30px;
+}
+
+#logo a:link{
+  text-decoration: none;
+  color: white;
+}
+
+#logo a:visited{
+  text-decoration: none;
+  color: white;
+}
+
+#logo a:hover{
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #5e6472;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a:visited {
+  color: #5e6472;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+  transition: var(--fade);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #5e6472;
+  margin: 5px;
+  transition: var(--fade);
+  position: relative;
+  left: 20px;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+
+#header-responsive{
+    border: 1px white solid;
+    box-shadow: var(--shadow);
+    height: 5em;
+}
+
+#nav-responsive{
+    z-index: 2;
+}
+
+#logo-design{
+    position: relative;
+    width: 150px;
+    top: 20px;
+    left: 20px;
+}
+
+/*-NAVIGATION BAR-*/
+.nav-links {
+    display: block;
+    position: fixed;
+    right: 0px;
+    height: 100vh;
+    top: 0vh;
+    background-color: #ebebeb;
+    /* opacity: 0.9; */
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 2;
+}
+
+.nav-links li {
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    top: 70px;
+    margin: 20px 10px;
+    text-align: center;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    right: 12px;
+}
+
+.nav-links a{
+    position: relative;
+    font-size: 1.8em;
+    padding: 20px 0;
+}
+
+.burger {
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+    position: fixed;
+    top: 25px;  
+    right: 50px;      
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+  #nav-desktop{
+    display: none;
+  }
+
+  #header-responsive{
+    display: block;
+  }
+
+
+  main.container{
+    height: 100%;
+    max-height: max-content;
+    /* overflow: auto; */
+  }
+  
+  /* HOME PAGE */
+
+  .home{
+    transform: none;
+    padding: 10% 0 20% 0;
+
+  }
+
+  .home section .bodyText {
+    transform: none;
+    text-align: center;
+  }
+
+  #homepage-logo-wrapper{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #projectify-logo-colour{
+    margin-bottom: 30px;
+    clear: both;
+  }
+
+  .home p{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    line-height: 2;
+  }
+
+  .home .bodyImg{
+    display: none;
+  } 
+
+  #StartButton{
+    display: inline-block;
+    position: relative;
+    top: 30px;
+  } 
+
+  /* REGISTER */
+  .signupPage{
+    padding: 5% 0;
+  }
+  
+  #signup-form input[type=text], #signup-form input[type=password]{
+    border: 1px #d3d3d3 solid;
+    border-radius: 10px;
+  }
+  
+  #signup-form .d-flex{
+    margin: 5px 0;
+  }
+
+  #address-signup, #password-signup{
+    display: inline-block;
+    margin: 5px 0;
+  }
+
+  #tablet-design{
+    display: none;
+  }
+
+  /* PRODUCTS PAGE */
+  section.productsPage{
+    transform: none;
+    padding: 5% 0;
+
+  }
+  
+  section.productsPage .d-flex{
+    display: block;
+  }
+
+  section.productsPage .d-grid{
+    display: inline-block;
+  }
+
+  .d-flex div{
+    margin: 10px 0;
+  }
+
+  #three{
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  #tell-me-more{
+    display: none;
+  }
+
+  /* TEAM */
+  section.teamPage{
+    transform: none;
+    padding: 5% 0;
+
+  }
+  
+  section.teamPage .d-flex{
+    display: block;
+  }
+
+  /* LOGIN */
+
+  .loginPage{
+    padding: 5% 0;
+  }
+  
+  #login-form input[type=text], #login-form input[type=password]{
+    border: 1px #d3d3d3 solid;
+    border-radius: 10px;
+  }
+
+  .loginPage .bodyImg{
+    display: none;
+  }
+  
+  /* MY PROFILE */
+  section.confirmationPage{
+    transform: none;
+    padding: 5% 0;
+  }
+
+  .confirmationPage .d-flex{
+    display: block;
+  }
+
+  #my-projects-desktop{
+    display: none;
+  }
+
+  #my-projects-responsive{
+    display: inline-block;
+  }
+
+
+  /* PROJECTS PAGE */
+  section.projectPage{
+    transform: none;
+    padding: 5% 0;
+  }
+
+  section.projectPage .img-block img {
+    width: 100%;
+    display: none;
+}
+
+section.projectPage .img-block {
+  width: auto;
+}
+
+  /* DASHBOARD */
+  section.dashboardPage{
+    transform: none;
+    padding: 5% 0;
+  }
+
+  .project-select{
+    display: inline-block;
+  }
+
+  section.dashboardPage .d-flex{
+    display: block;
+  }
+  
+  section.dashboardPage .imgBlock {
+    width: 100%;
+  }
+
+  section.dashboardPage select {
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 51px;
+}
+  /* FOOTER */
+ 
+  footer{
+    height: auto;
+    padding: 30px 0;
+  }
+
+  footer #footer-nav-container{
+    display: block;
+    text-align: center;
+  }
+
+  #footer-nav-container div{
+    display: inline-block;
+  }
+
+  footer a{
+    margin-right: 0;
+    padding: 0 1.5em;
+  }
+
+  footer .logo-wrapper{
+    width: 30%;
+  }
+
+  footer .logo {
+    margin-top: 2rem;
+}
+
 }

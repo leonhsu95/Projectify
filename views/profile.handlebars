@@ -1,7 +1,7 @@
 <section class="confirmationPage">
   <div class="d-flex justify-space-between">
-  <h2>Your Details</h2>
-    <h2>Your Projects</h2>
+  <h2>My Details</h2>
+  <h2 id="my-projects-desktop">My Projects</h2>
   </div>
   <div class="d-flex">
     <div>
@@ -15,6 +15,7 @@
         <li><span><i class="fas fa-bullseye"></i></span>  ABN: {{dbUserData.abn}} {{test.name}} </li>
       </ul>
     </div>
+    <h2 id="my-projects-responsive">My Projects</h2>
     <div>
       <ul>
         {{#each dbUserData.projects}}

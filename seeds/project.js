@@ -2,7 +2,7 @@ const { Project } = require("../models");
 
 const projectData = [
   {
-    project_name: "Web Worker Campaign 1",
+    project_name: "Web Workers Campaign 1",
     project_description:
       "Web Worker  offers their customers a web update service. This campaign drives new customers to sign-up with Web Workers",
     start_date: 2021 / 06 / 01,

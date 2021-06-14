@@ -47,7 +47,7 @@ npm i mysql2
 npm i nodemon
 npm i sequelize
  ```
-Additionally Bootstrap and Semantic CSS libaries are used for this project. [Code Highcharts](https://www.highcharts.com/blog/download/) was the new technology used to display client campaign performance data.
+Additionally Semantic CSS libaries are used for this project. [Code Highcharts](https://www.highcharts.com/blog/download/) was the new technology used to display client campaign performance data.
 
 Before you run the code, please change scripts:{start: } to 'node server.js' in the package.json file and change your database login credentials in the (dotenv).env file.
 
