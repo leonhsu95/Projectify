@@ -35,8 +35,8 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get("/faq", (req, res) => {
-  res.render("faq")
+router.get("/faqs", (req, res) => {
+  res.render("faqs")
 })
 
 router.get("/privacy", (req, res) => {
